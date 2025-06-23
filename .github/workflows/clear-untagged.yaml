@@ -5,9 +5,11 @@ jobs:
   delete-untagged-images:
     runs-on: ubuntu-latest
     steps:
-      - name: 'delete-untagged-images'
-        uses: d22/cleanup-ghcr-containers-action@v0.3.3
+      - name: Delete all owner containers without tags
+        uses: Chizkiyahu/delete-untagged-ghcr-action@v6
         with:
-          access-token: ${{ secrets.GITHUB_TOKEN }}
-          versions-to-keep: 3
-          package-name: 'yolks'
+            token: ${{ secrets.GITHUB_TOKEN }}
+            repository_owner: ${{ github.repository_owner }}
+            untagged_only: true
+            package_name: 'yolks,installers'
+            owner_type: user # or org
