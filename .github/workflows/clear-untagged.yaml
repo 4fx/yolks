@@ -1,0 +1,13 @@
+name: 'clear-untagged-images'
+on:
+  workflow_dispatch:
+jobs:
+  delete-untagged-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'delete-untagged-images'
+        uses: mitchfen/cleanup-untagged-container-images@v1.0.2
+        with:
+          username: '4fx'
+          container-name: 'yolks'
+          token: ${{ secrets.GITHUB_TOKEN }}
