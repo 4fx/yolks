@@ -1,5 +1,5 @@
-# In this example GHCR_TOKEN has the packages:delete permission
-- uses: mitchfen/cleanup-untagged-container-images@v1.0.2
+- name: Cleanup untagged container images yolks
+  uses: mitchfen/cleanup-untagged-container-images@v1.0.2
   with:
     username: '4fx'
     container-name: 'yolks'
