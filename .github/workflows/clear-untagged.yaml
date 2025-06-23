@@ -6,8 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'delete-untagged-images'
-        uses: mitchfen/cleanup-untagged-container-images@v1.0.2
+        uses: d22/cleanup-ghcr-containers-action@v0.3.3
         with:
-          username: '4fx'
-          container-name: 'yolks'
-          token: ${{ secrets.GITHUB_TOKEN }}
+          access-token: ${{ secrets.GITHUB_TOKEN }}
+          versions-to-keep: 3
+          package-name: 'yolks'
