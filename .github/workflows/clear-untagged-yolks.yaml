@@ -1,6 +1,8 @@
-- name: Cleanup untagged container images yolks
-  uses: mitchfen/cleanup-untagged-container-images@v1.0.2
-  with:
-    username: '4fx'
-    container-name: 'yolks'
-    token: ${{ secrets.GITHUB_TOKEN }}
+jobs:
+  my_first_job:
+    steps:
+      - uses: mitchfen/cleanup-untagged-container-images@v1.0.2
+          with:
+            username: '4fx'
+            container-name: 'yolks'
+            token: ${{ secrets.GITHUB_TOKEN }}
